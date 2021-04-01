@@ -3,7 +3,7 @@ import "./App.css";
 import { Motif } from "./Motif";
 
 function App() {
-  const colors = ["#EBE5CF", "#436A67", "#434144", "#76E4DB"];
+  const colors = ["#B7CDC1", "#96B788", "#66CCDB"];
   const [predef, setPredef] = useState(true);
   const [color1, setColor1] = useState(
     colors[Math.floor(Math.random() * colors.length)]
@@ -66,12 +66,28 @@ function App() {
         </div>
       </div>
       <div>
-        <Picker
+        Ronds <Picker
           predef={predef}
           onChange={(event) => setColor1(event.target.value)}
           defaultValue={color1}
         />
         <Picker
+          predef={predef}
+          onChange={(event) => setColor8(event.target.value)}
+          defaultValue={color8}
+        />
+        <Picker
+          predef={predef}
+          onChange={(event) => setColor15(event.target.value)}
+          defaultValue={color14}
+        />
+        <Picker
+          predef={predef}
+          onChange={(event) => setColor10(event.target.value)}
+          defaultValue={color10}
+        />
+
+      Carré <Picker
           predef={predef}
           onChange={(event) => setColor2(event.target.value)}
           defaultValue={color2}
@@ -83,41 +99,6 @@ function App() {
         />
         <Picker
           predef={predef}
-          onChange={(event) => setColor4(event.target.value)}
-          defaultValue={color4}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor5(event.target.value)}
-          defaultValue={color5}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor6(event.target.value)}
-          defaultValue={color6}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor7(event.target.value)}
-          defaultValue={color7}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor8(event.target.value)}
-          defaultValue={color8}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor9(event.target.value)}
-          defaultValue={color9}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor10(event.target.value)}
-          defaultValue={color10}
-        />
-        <Picker
-          predef={predef}
           onChange={(event) => setColor11(event.target.value)}
           defaultValue={color11}
         />
@@ -125,6 +106,17 @@ function App() {
           predef={predef}
           onChange={(event) => setColor12(event.target.value)}
           defaultValue={color12}
+        />
+
+        Arabesque <Picker
+          predef={predef}
+          onChange={(event) => setColor4(event.target.value)}
+          defaultValue={color4}
+        />
+        <Picker
+          predef={predef}
+          onChange={(event) => setColor6(event.target.value)}
+          defaultValue={color6}
         />
         <Picker
           predef={predef}
@@ -136,10 +128,21 @@ function App() {
           onChange={(event) => setColor14(event.target.value)}
           defaultValue={color14}
         />
+
+        Fond <Picker
+          predef={predef}
+          onChange={(event) => setColor5(event.target.value)}
+          defaultValue={color5}
+        />
         <Picker
           predef={predef}
-          onChange={(event) => setColor15(event.target.value)}
-          defaultValue={color14}
+          onChange={(event) => setColor7(event.target.value)}
+          defaultValue={color7}
+        />
+        <Picker
+          predef={predef}
+          onChange={(event) => setColor9(event.target.value)}
+          defaultValue={color9}
         />
       </div>
 
@@ -217,10 +220,9 @@ const Picker = ({ onChange, predef, defaultValue }) => {
   if (predef)
     return (
       <select onChange={(event) => onChange(event)}>
-        <option value="#EBE5CF">Latte</option>
-        <option value="#436A67">Petrolio</option>
-        <option value="#434144">Liquirizia</option>
-        <option value="#76E4DB">Turquoise</option>
+        <option value="#B7CDC1">Gris</option>
+        <option value="#96B788">Vert</option>
+        <option value="#66CCDB">Turquoise</option>
       </select>
     );
 
