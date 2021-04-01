@@ -5,51 +5,24 @@ import { Motif } from "./Motif";
 function App() {
   const colors = ["#B7CDC1", "#96B788", "#66CCDB"];
   const [predef, setPredef] = useState(true);
-  const [color1, setColor1] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color2, setColor2] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color3, setColor3] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color4, setColor4] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color5, setColor5] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color6, setColor6] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color7, setColor7] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color8, setColor8] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color9, setColor9] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color10, setColor10] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color11, setColor11] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color12, setColor12] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color13, setColor13] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color14, setColor14] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
-  const [color15, setColor15] = useState(
-    colors[Math.floor(Math.random() * colors.length)]
-  );
+  const [color1, setColor1] = useState("#66CCDB");
+  const [color14, setColor14] = useState("#66CCDB");
+
+  const [color2, setColor2] = useState("#96B788");
+  const [color5, setColor5] = useState("#96B788");
+  const [color6, setColor6] = useState("#96B788");
+  const [color7, setColor7] = useState("#96B788");
+  const [color8, setColor8] = useState("#96B788");
+  const [color9, setColor9] = useState("#96B788");
+  const [color10, setColor10] = useState("#96B788");
+  const [color12, setColor12] = useState("#96B788");
+  const [color15, setColor15] = useState("#96B788");
+
+  const [color3, setColor3] = useState("#B7CDC1");
+  const [color11, setColor11] = useState("#B7CDC1");
+
+  const [color4, setColor4] = useState("#66CCDB");
+  const [color13, setColor13] = useState("#66CCDB");
 
   return (
     <div className="App">
@@ -66,83 +39,48 @@ function App() {
         </div>
       </div>
       <div>
-        Ronds <Picker
+        Ronds{" "}
+        <Picker
           predef={predef}
-          onChange={(event) => setColor1(event.target.value)}
+          onChange={(event) => {
+            setColor1(event.target.value);
+            setColor14(event.target.value);
+          }}
           defaultValue={color1}
         />
+        Fond
         <Picker
           predef={predef}
-          onChange={(event) => setColor8(event.target.value)}
+          onChange={(event) => {
+            setColor8(event.target.value);
+            setColor15(event.target.value);
+            setColor10(event.target.value);
+            setColor2(event.target.value);
+            setColor12(event.target.value);
+            setColor6(event.target.value);
+            setColor5(event.target.value);
+            setColor7(event.target.value);
+            setColor9(event.target.value);
+          }}
           defaultValue={color8}
         />
+        Carré
         <Picker
           predef={predef}
-          onChange={(event) => setColor15(event.target.value)}
-          defaultValue={color14}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor10(event.target.value)}
-          defaultValue={color10}
-        />
-
-      Carré <Picker
-          predef={predef}
-          onChange={(event) => setColor2(event.target.value)}
-          defaultValue={color2}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor3(event.target.value)}
+          onChange={(event) => {
+            setColor3(event.target.value);
+            setColor11(event.target.value);
+          }}
           defaultValue={color3}
         />
+        Arabesque
         <Picker
           predef={predef}
-          onChange={(event) => setColor11(event.target.value)}
-          defaultValue={color11}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor12(event.target.value)}
-          defaultValue={color12}
-        />
-
-        Arabesque <Picker
-          predef={predef}
-          onChange={(event) => setColor4(event.target.value)}
+          onChange={(event) => {
+            setColor4(event.target.value);
+            setColor13(event.target.value);
+          }}
           defaultValue={color4}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor6(event.target.value)}
-          defaultValue={color6}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor13(event.target.value)}
-          defaultValue={color13}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor14(event.target.value)}
-          defaultValue={color14}
-        />
-
-        Fond <Picker
-          predef={predef}
-          onChange={(event) => setColor5(event.target.value)}
-          defaultValue={color5}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor7(event.target.value)}
-          defaultValue={color7}
-        />
-        <Picker
-          predef={predef}
-          onChange={(event) => setColor9(event.target.value)}
-          defaultValue={color9}
         />
       </div>
 
@@ -219,7 +157,7 @@ function App() {
 const Picker = ({ onChange, predef, defaultValue }) => {
   if (predef)
     return (
-      <select onChange={(event) => onChange(event)}>
+      <select onChange={(event) => onChange(event)} defaultValue={defaultValue}>
         <option value="#B7CDC1">Gris</option>
         <option value="#96B788">Vert</option>
         <option value="#66CCDB">Turquoise</option>
